@@ -88,7 +88,7 @@ Obtemos a figura-1 mostrando a distribuição dos dados de idade. Como podemos n
 
 O que também é constatado é que a distribuição se conserva mesmo se tratando de contas atividas ou desativadas
 
-## Agrupando por estado por estado podemos ver os que mais se destacam na participação da base de dados
+## Agrupando por estado podemos ver os que mais se destacam na participação da base de dados
 
 
 
