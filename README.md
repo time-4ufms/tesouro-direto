@@ -89,18 +89,23 @@ Obtemos a figura-1 mostrando a distribuição dos dados de idade. Como podemos n
 O que também é constatado é que a distribuição se conserva mesmo se tratando de contas atividas ou desativadas
 
 ## Agrupando por estado podemos ver os que mais se destacam na participação da base de dados
-
-
-
 <table>
   <tr>
-    <td align="center">
-      <img src="images/mapa_investidor_total.png" width="100%"><br>
-      <sub><b>Distribuição de idades de contas atividas</b></sub>
+    <td align="left">
+      <!-- <img src="images/mapa_investidor_total.png" width="100%"><br> -->
+      <h1><b>Quantidade de investidores vs IDH-M 2021</b></h1>
+      <h3>
+      Correlação de Pearson: 0.570 <br>
+      P-valor: 0.00192 <br>
+      Correlação de Spearman: 0.681325
+      </h3>
     </td>
     <td align="center">
-      <img src="images/mapa_regioes_brasil.png" width="100%"><br>
-      <sub><b>Regiões do Brasil</b></sub>
+      <img src="images/mapa_regioes_brasil.png" width="80%"><br>
+      <sub>
+        <b>Regiões do Brasil</b><br>
+        Fonte: https://www.todamateria.com.br/regioes-brasileiras/
+      </sub>
     </td>
     <td align="center">
       <img src="images/mapa_investidor_total.png" width="100%"><br>
