@@ -26,3 +26,6 @@ Thumbs.db
 *.log
 *.bak
 *.tmp
+
+# pasta de dados
+src/data/*

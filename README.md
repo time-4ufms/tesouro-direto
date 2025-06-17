@@ -1,30 +1,54 @@
-# Analises iniciais
+# 📊 Análises Iniciais
 
-As seguintes analises fazem parte do programa pantanal.dev, um programa de capacitação imersiva em tecnologias inovadoras que tem como objetivo capacitar e apresentar oportunidades de trabalho remoto no mercado financeiro nacional 💼.
-Nesse contexto este documento trata da analise exploratoria de dados cujo objetivo é responder perguntas além das mais obvias geralmente proferidas a este tipo de dado.
-Buscamos também outras bases de dados cujo o contexto encontra-se em determinada parte da analise. Como é o caso da base ESTBAN.
+Este repositório faz parte do **Pantanal.dev**, um programa de capacitação imersiva em tecnologias inovadoras, com foco na geração de oportunidades de trabalho remoto no mercado financeiro nacional 💼.
 
-# Tesouro direto
-Este conjunto de dados reúne informações sobre os investidores registrados no programa Tesouro Direto. Ele apresenta detalhes do perfil de cada investidor, como a data em que aderiu ao programa, sua profissão, cidade onde reside, estado civil, entre outros dados relevantes. Também estão incluídas informações sobre a situação atual do investidor, indicando se ele ainda participa ativamente do programa e se realizou operações nos últimos 12 meses. Cada investidor é identificado por um código único. Caso um mesmo investidor tenha registros em mais de uma instituição financeira, esses cadastros adicionais são apresentados em linhas separadas, utilizando o mesmo código de identificação.
-Esta base pode ser encontrada através do link: https://www.tesourotransparente.gov.br/ckan/dataset/investidores-do-tesouro-direto
+O objetivo deste projeto é realizar uma análise exploratória dos dados, buscando responder perguntas além das análises tradicionais normalmente feitas com este tipo de dado. Durante o processo, também utilizamos bases complementares, como a **ESTBAN**, para enriquecer os insights obtidos.
 
-# Problema
-Identificar agrupamentos de investidores com base em informações dadas pela base de dados do tesouro direto.
+---
 
-# Justificativa
-O numero de investidores em em ativos de baixo risco tem crescendo uma vez que o mercado de ativos de alto risco possui grande volatividade dado ao contexto atual de dinâmicas economicas a nivel mundial.
-Nesse contexto, identificar perfis de investidores não somente pela justificativa de agrupa-los mas sim de trazer novos capitais ativos ja consolidados, como o caso do tesouro direto.
-Por isso, entender o comportamento de pessoas que já investem no ativo, pode ajudar direcionar esforços para novos investidores.
+## 📈 Base de Dados: Tesouro Direto
 
-# Perguntas a serem respondidas
-* ✅ Quais são as idades e como esta distribuido o dataset com relação ao investimento em tesouro direto?
-* ✅ Considerando apenas os investidores ativos, a distribuição de idade se conserva?
-* ✅ Qual o estado com o maior numeros de pessoas que investem em tesouro direto? 
-* ✅ Qual a distribuição de genero mais presente no dataset?
-* Como os investidores estão agrupados?
-* Existe alguma relação entre o IDH de um estado e o investimento em tesouro direto?
+O conjunto de dados utilizado contém informações sobre investidores do programa **Tesouro Direto**. Cada registro traz detalhes do perfil do investidor, como:
 
-# ✅Dicionario de dados
+- Data de adesão
+- Profissão
+- Localização (cidade e estado)
+- Estado civil
+- Gênero
+- Situação atual da conta (ativa ou não)
+- Operações realizadas nos últimos 12 meses
+
+Cada investidor possui um **identificador único**, mas, caso tenha contas em mais de uma instituição financeira, aparecem como registros distintos, porém com o mesmo código.
+
+🔗 A base de dados está disponível em:  
+[https://www.tesourotransparente.gov.br/ckan/dataset/investidores-do-tesouro-direto](https://www.tesourotransparente.gov.br/ckan/dataset/investidores-do-tesouro-direto)
+
+---
+
+## 🎯 Problema
+
+**Como identificar agrupamentos de investidores a partir das informações disponíveis na base do Tesouro Direto?**  
+
+---
+
+## 💡 Justificativa
+
+O número de investidores em ativos de baixo risco, como o Tesouro Direto, tem crescido significativamente. Isso se deve à alta volatilidade dos ativos de risco, influenciada pelas dinâmicas econômicas globais.
+
+Diante desse cenário, entender o perfil dos investidores atuais é estratégico. Esse conhecimento não apenas permite agrupar perfis semelhantes, mas também auxilia na formulação de estratégias para atrair novos investidores e fortalecer o mercado.
+
+---
+
+## ❓ Perguntas a Serem Respondidas
+
+- ✅ **Quais são as idades e como está distribuída a base em relação ao investimento no Tesouro Direto?**
+- ✅ **A distribuição de idade se mantém considerando apenas investidores ativos?**
+- ✅ **Qual é o estado com o maior número de investidores?**
+- ✅ **Qual é a distribuição de gênero presente na base?**
+- 🔍 **Como os investidores estão agrupados?**
+- 🔍 **Existe relação entre o IDH dos estados e o investimento no Tesouro Direto?**
+
+## 🗂️ Dicionário de Dados
 | Nome da Coluna         | Descrição                                                     | Tipo de Dado       | Categoria     |
 | ---------------------- | ------------------------------------------------------------- | ------------------ | ------------- |
 | `Codigo do Investidor` | Identificador único de cada investidor                        | Numérico (inteiro) | Identificador |
@@ -39,14 +63,14 @@ Por isso, entender o comportamento de pessoas que já investem no ativo, pode aj
 | `Situacao da Conta`    | Situação atual da conta (ex: "D" para desativada)             | Categórico         | Status/Flag   |
 | `Operou 12 Meses`      | Indica se o investidor operou nos últimos 12 meses (S/N)      | Categórico         | Binário       |
 
-# 📁Resumo por Tipo de Dado
+## 🔢 Resumo dos Dados
 | Tipo de Dado  | Quantidade de Colunas | Colunas                                                                                                                                         |
 | ------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Numérico      | 2                     | `Codigo do Investidor`, `Idade`                                                                                                                 |
 | Categórico    | 8                     | `Estado Civil`, `Genero`, `Profissao`, `UF do Investidor`, `Cidade do Investidor`, `Pais do Investidor`, `Situacao da Conta`, `Operou 12 Meses` |
 | Data/Temporal | 1                     | `Data de Adesao`                                                                                                                                |
 
-# 📊 Estatísticas da Base de Dados
+## 📊 Estatísticas da Base de Dados
 Quantidade de Instâncias (linhas): 100.000 <br>
 Quantidade de Características (colunas): 11
 
@@ -72,15 +96,15 @@ Obtemos a figura-1 mostrando a distribuição dos dados de idade. Como podemos n
 <table>
   <tr>
     <td align="center">
-      <img src="images/distribuicao_faixa_etária_contas_ativadas.png" width="100%"><br>
-      <sub><b>Distribuição de idades de contas atividas</b></sub>
+      <img src="src/images/distribuicao_faixa_etária_contas_ativadas.png" width="100%"><br>
+      <sub><b>Distribuição de idades de contas ATIVADAS</b></sub>
     </td>
     <td align="center">
-      <img src="images/distribuicao_faixa_etária_contas_desativadas.png" width="100%"><br>
-      <sub><b>Distribuição de idades de contas atividas</b></sub>
+      <img src="src/images/distribuicao_faixa_etária_contas_desativadas.png" width="100%"><br>
+      <sub><b>Distribuição de idades de contas DESATIVADAS</b></sub>
     </td>
     <td align="center">
-      <img src="images/distribuicao_faixa_etária_total.png" width="100%"><br>
+      <img src="src/images/distribuicao_faixa_etária_total.png" width="100%"><br>
       <sub><b>Distribuição de idades no total</b></sub>
     </td>
   </tr>
@@ -101,18 +125,29 @@ O que também é constatado é que a distribuição se conserva mesmo se tratand
       </h3>
     </td>
     <td align="center">
-      <img src="images/mapa_regioes_brasil.png" width="80%"><br>
+      <img src="src/images/mapa_regioes_brasil.png" width="80%"><br>
       <sub>
         <b>Regiões do Brasil</b><br>
         Fonte: https://www.todamateria.com.br/regioes-brasileiras/
       </sub>
     </td>
     <td align="center">
-      <img src="images/mapa_investidor_total.png" width="100%"><br>
+      <img src="src/images/mapa_investidor_total.png" width="100%"><br>
       <sub><b>Distribuição de investidores por estado</b></sub>
     </td>
   </tr>
 </table>
+
+## 📊 Distribuição percentual das profissões por estado
+
+Este gráfico mostra como as profissões estão distribuídas percentualmente em cada estado, com base nos dados dos investidores do Tesouro Direto.
+
+<p align="center">
+  <img src="src/images/distribuicao_profissoes_por_estado.png" alt="Distribuição das profissões por estado" width="100%">
+</p>
+
+O que indica um comportamento bem diferente para cada profissão por estado.
+
 
 
 
