@@ -147,9 +147,66 @@ Este gráfico mostra como as profissões estão distribuídas percentualmente em
 </p>
 
 O que indica um comportamento bem diferente para cada profissão por estado.
+---
+## Construção do macrogrupo de profissões
 
+### Para a criação desses grupos foram utilizadas modelos de linguagem generativas (LLMs) com o auxilio humano conferindo e supervisionando o processo acelerando a discretização dos dados.
+#### Segue o exemplo a seguir
+```python
+profissoes_agrupadas = {
+    "Não CLTs": ["PROFISSIONAL LIBERAL", 'TRABALHADOR AUTÔNOMO'],
+    "Outros": [
+        "OUTROS", "Não se aplica", "FALECIDO"
+    ],
+    "Aposentados e Pensionistas": [
+        "APOSENTADO (EXCETO FUNCIONÁRIO PÚBLICO)",
+        "FUNCIONÁRIO PÚBLICO CIVIL APOSENTADO",
+        "MILITAR REFORMADO", "PENSIONISTA"
+    ],
+    "Estudantes e Bolsistas": [
+        "BOLSISTA, ESTAGIÁRIO E ASSEMELHADOS", "ESTUDANTE"
+    ],
+    "Funcionários Públicos": [
+        "SERVIDOR PÚBLICO FEDERAL", "SERVIDOR PÚBLICO MUNICIPAL", "SERVIDO PÚBLICO ESTADUAL",
+        "FUNCIONÁRIO PÚBLICO CIVIL APOSENTADO",
+        "OCUPANTE DE CARGO DE DIREÇAO E ASSESSORAMENTO SUPERIOR",
+        "OCUPANTE DE CARGO DE DIREÇAO E ASSESSORAMENTO INTERMEDIÁRIO",
+        "MEMBRO DO PODER JUDICIÁRIO: MINISTRO DE TRIB. SUPERIOR",
+        "MEMBRO DO PODER LEGISLATIVO: SENADOR, DEP.FED.E ESTADUAL",
+        "MEMBRO DO PODER EXECUTIVO: PRES.REPÚBLICA, MINISTRO ETC.",
+        "DELEGADO DE POLÍCIA", "FISCAL"
+    ]
+}
+...
+```
+### Com esses grupos criados, foram criados os macrogrupos de profissoes
+#### Segue o exemplo a seguir
+```python
+macrogrupo_para_grupos = {
+    'Economia, Negócios e Administração': [
+        'Contabilidade e Finanças',
+        'Administração e Negócios',
+        'Comércio e Vendas',
+        'Proprietários e Renda Passiva',
+        'Direção e Liderança'
+    ],
+    'Serviços Públicos e Segurança': [
+        'Funcionários Públicos',
+        'Forças de Segurança e Defesa',
+        'Religião e Assistência Social',
+        'Direito e Justiça'
+    ],
+    'Educação, Ciência e Pesquisa': [
+        'Educação e Pesquisa',
+        'Ciências Naturais e Exatas',
+        'Ciências Exatas e Humanas',
+        'Estudantes e Bolsistas'
+    ]
+}
+...
+```
 
-
+### Classificador
 
 
 
