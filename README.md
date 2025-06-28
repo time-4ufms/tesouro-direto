@@ -215,12 +215,12 @@ A tabela a seguir mostra os resultados obtidos a cerca dessa discussão
   <tr>
     <td align="left">
       <!-- <img src="images/mapa_investidor_total.png" width="100%"><br> -->
-      <h1><b>Quantidade de investidores vs IDH-M 2021</b></h1>
+      <h1><b>Acuracia de modelos para macrogrupos de profissoes</b></h1>
       <h2>
       Acurácia Decision Tree: 0.15306122448979592 <br>
       Acurácia Random Forest: 0.16326530612244897 <br>
-      Acurácia XGBoost: 0.22448979591836735 <br>
-      Acurácia CatBoost: 0.2653061224489796 <br>
+      Acurácia XGBoost:------ 0.22448979591836735 <br>
+      Acurácia CatBoost:----- 0.2653061224489796 <br>
       Obs.: a acuracia baixa pode ser explicada pela quantidade dos dados: 12 macrogrupos × 27 estados = 324 amostras 
       </h2>
     </td>
